@@ -19,12 +19,18 @@ public class StudentController {
 
     @GetMapping
     public List<Student> getAllStudents() {
+    public List<Student> getAllStudents(
+            @RequestParam(required = false) String course,
+            @RequestParam(required = false) String grade) {
+        if (course != null) return studentService.getStudentsByCourse(course.trim());
+        if (grade != null) return studentService.getStudentsByGrade(grade.trim());
         return studentService.getAllStudents();
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Student> getStudent(@PathVariable Long id) {
-        return ResponseEntity.ok(studentService.getStudentById(id));
+        Student student = studentService.getStudentById(id);
+        return ResponseEntity.ok(student);
     }
 
     @PostMapping
