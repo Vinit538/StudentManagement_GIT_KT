@@ -36,6 +36,16 @@ public class StudentService {
         return repository.save(existing);
     }
 
+    public List<Student> getStudentsByCourse(String course) {
+        if (course == null || course.isBlank()) throw new RuntimeException("Course cannot be empty");
+        return repository.findByCourse(course);
+    }
+
+    public List<Student> getStudentsByGrade(String grade) {
+        if (grade == null || grade.isBlank()) throw new RuntimeException("Grade cannot be empty");
+        return repository.findByGrade(grade);
+    }
+
     public void deleteStudent(Long id) {
         repository.deleteById(id);
     }

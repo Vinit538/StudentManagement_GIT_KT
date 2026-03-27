@@ -19,6 +19,7 @@ public class StudentRepository {
         store.add(new Student(2L, "Bob Smith",    "bob@example.com",   "Mathematics",      "B"));
         store.add(new Student(3L, "Carol White",  "carol@example.com", "Physics",          "A"));
         store.add(new Student(4L, "White Carol S",  "white@example.com", "Physics",          "B"));
+        store.add(new Student(6L, "White S",  "swhite@example.com", "Civil",          "A"));
     }
 
     public List<Student> findAll() { return store; }
@@ -36,6 +37,14 @@ public class StudentRepository {
         store.removeIf(s -> s.getId().equals(student.getId()));
         store.add(student);
         return student;
+    }
+
+    public List<Student> findByCourse(String course) {
+        return store.stream().filter(s -> s.getCourse().equalsIgnoreCase(course)).toList();
+    }
+
+    public List<Student> findByGrade(String grade) {
+        return store.stream().filter(s -> s.getGrade().equalsIgnoreCase(grade)).toList();
     }
 
     public void deleteById(Long id) {
