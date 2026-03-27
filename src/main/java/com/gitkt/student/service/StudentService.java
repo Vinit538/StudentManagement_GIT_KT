@@ -36,6 +36,14 @@ public class StudentService {
         return repository.save(existing);
     }
 
+    public List<Student> getStudentsByCourse(String course) {
+        return repository.findByCourse(course);
+    }
+
+    public List<Student> getStudentsByGrade(String grade) {
+        return repository.findByGrade(grade);
+    }
+
     public void deleteStudent(Long id) {
         repository.deleteById(id);
     }
