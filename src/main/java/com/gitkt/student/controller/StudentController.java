@@ -18,7 +18,6 @@ public class StudentController {
     }
 
     @GetMapping
-    public List<Student> getAllStudents() {
     public List<Student> getAllStudents(
             @RequestParam(required = false) String course,
             @RequestParam(required = false) String grade) {

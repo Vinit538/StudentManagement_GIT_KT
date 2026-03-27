@@ -39,6 +39,14 @@ public class StudentRepository {
         return student;
     }
 
+    public List<Student> findByCourse(String course) {
+        return store.stream().filter(s -> s.getCourse().equalsIgnoreCase(course)).toList();
+    }
+
+    public List<Student> findByGrade(String grade) {
+        return store.stream().filter(s -> s.getGrade().equalsIgnoreCase(grade)).toList();
+    }
+
     public void deleteById(Long id) {
         store.removeIf(s -> s.getId().equals(id));
     }
