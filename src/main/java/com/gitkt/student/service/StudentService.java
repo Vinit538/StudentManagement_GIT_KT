@@ -37,10 +37,12 @@ public class StudentService {
     }
 
     public List<Student> getStudentsByCourse(String course) {
+        if (course == null || course.isBlank()) throw new RuntimeException("Course cannot be empty");
         return repository.findByCourse(course);
     }
 
     public List<Student> getStudentsByGrade(String grade) {
+        if (grade == null || grade.isBlank()) throw new RuntimeException("Grade cannot be empty");
         return repository.findByGrade(grade);
     }
 
