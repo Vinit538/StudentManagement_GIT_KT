@@ -46,8 +46,6 @@ public class StudentController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteStudent(@PathVariable Long id) {
-        // TODO: remove this log later
-        System.out.println("delete called");
         studentService.deleteStudent(id);
         return ResponseEntity.noContent().build();
     }
