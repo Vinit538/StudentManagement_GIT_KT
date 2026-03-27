@@ -15,6 +15,8 @@ public class StudentService {
     }
 
     public List<Student> getAllStudents() {
+        // dummy log - to be removed
+        System.out.println("fetching all students");
         return repository.findAll();
     }
 
