@@ -29,7 +29,7 @@ public class StudentService {
         System.out.println("[MIXED] creating student");
         return repository.save(student);
     }
-
+    //Update student
     public Student updateStudent(Long id, Student updated) {
         Student existing = getStudentById(id);
         existing.setName(updated.getName());
