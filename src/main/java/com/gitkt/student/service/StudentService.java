@@ -15,6 +15,7 @@ public class StudentService {
     }
 
     public List<Student> getAllStudents() {
+        System.out.println("[SOFT] fetching all students");
         return repository.findAll();
     }
 
@@ -24,6 +25,7 @@ public class StudentService {
     }
 
     public Student createStudent(Student student) {
+        System.out.println("[MIXED] creating student");
         return repository.save(student);
     }
 
