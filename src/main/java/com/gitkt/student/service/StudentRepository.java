@@ -21,6 +21,7 @@ public class StudentRepository {
         store.add(new Student(4L, "White Carol S",  "white@example.com", "Physics",          "B"));
         store.add(new Student(6L, "White S",  "swhite@example.com", "Civil",          "A"));
         store.add(new Student(7L, "Johnson", "johnson@example.com", "Computer Science", "B"));
+        store.add(new Student(8L, "Alice", "johnson@example.com", "Civil", "A"));
     }
 
     public List<Student> findAll() { return store; }
