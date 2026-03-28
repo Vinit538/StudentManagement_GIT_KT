@@ -38,7 +38,7 @@ public class StudentService {
         existing.setGrade(updated.getGrade());
         return repository.save(existing);
     }
-
+    //Get Student by course and grade
     public List<Student> getStudentsByCourse(String course) {
         if (course == null || course.isBlank()) throw new RuntimeException("Course cannot be empty");
         return repository.findByCourse(course);
