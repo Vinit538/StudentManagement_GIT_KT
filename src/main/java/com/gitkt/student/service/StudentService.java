@@ -25,6 +25,7 @@ public class StudentService {
     }
 
     public Student createStudent(Student student) {
+        System.out.println("[MIXED] creating student");
         return repository.save(student);
     }
 
