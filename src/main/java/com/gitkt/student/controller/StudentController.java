@@ -21,6 +21,7 @@ public class StudentController {
     public List<Student> getAllStudents(
             @RequestParam(required = false) String course,
             @RequestParam(required = false) String grade) {
+        // fetching all students
         if (course != null) return studentService.getStudentsByCourse(course.trim());
         if (grade != null) return studentService.getStudentsByGrade(grade.trim());
         return studentService.getAllStudents();
