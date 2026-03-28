@@ -27,7 +27,7 @@ public class StudentController {
         if (grade != null) return studentService.getStudentsByGrade(grade.trim());
         return studentService.getAllStudents();
     }
-
+    //Getstudent
     @GetMapping("/{id}")
     public ResponseEntity<Student> getStudent(@PathVariable Long id) {
         Student student = studentService.getStudentById(id);
