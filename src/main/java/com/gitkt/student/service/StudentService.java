@@ -20,6 +20,7 @@ public class StudentService {
     }
 
     public Student getStudentById(Long id) {
+        if (id <= 0) throw new RuntimeException("Invalid student id: " + id);
         return repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Student not found with id: " + id));
     }
